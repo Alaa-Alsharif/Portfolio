@@ -1,0 +1,671 @@
+body {
+  background: #000022;
+  box-sizing: border-box;
+}
+
+.hash-span {
+  display: none !important;
+  margin-top: 0px;
+  padding-bottom: 0px;
+}
+
+.container {
+  margin-bottom: 50px;
+  padding: 0.625rem 0.375rem;
+  z-index: 0;
+  position: relative;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.deskNav {
+  background-color: #000022;
+  padding: 20px 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  border-bottom: 2px solid #fa9c1d;
+}
+.deskNav .logocontainer .logoLink {
+  display: block;
+}
+.deskNav .logocontainer .logoLink img {
+  display: block;
+  object-fit: contain;
+  height: 100%;
+  width: auto;
+  max-width: 40px;
+}
+.deskNav .logocontainer .logoLink h1 {
+  font-size: 21px;
+  font-weight: 700;
+  transition: ease-in-out 0.3s;
+  color: white;
+}
+.deskNav .logocontainer .logoLink h1 span {
+  transition: ease-in-out 0.3s;
+  color: #fa9c1d;
+}
+.deskNav .logocontainer .logoLink h1:hover {
+  color: #fa9c1d;
+}
+.deskNav .logocontainer .logoLink h1:hover span {
+  color: white;
+}
+.deskNav .navlist {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.deskNav .navlist li {
+  color: #fbf5f3;
+  transition: 0.3s ease-in-out;
+}
+.deskNav .navlist li.active {
+  color: #fa9c1d;
+}
+.deskNav .navlist li:hover {
+  cursor: pointer;
+}
+.deskNav .navlist li:hover:not(.active) {
+  opacity: 0.8;
+}
+
+.introduction {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: calc(100vh - 80px);
+  position: relative;
+  margin-top: 80px;
+  min-height: 50vh;
+  overflow: hidden;
+  padding: 20px 5%;
+  /* Glowing border effect */
+  /* Apply the animation to the border */
+}
+.introduction .Particle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  object-fit: contain;
+}
+.introduction .text-container {
+  position: relative;
+  width: fit-content;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+.introduction .text-container .sidedesign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.introduction .text-container .sidedesign .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(250, 155, 31);
+}
+.introduction .text-container .sidedesign .line {
+  width: 2px;
+  height: 320px;
+  background: linear-gradient(0deg, rgba(250, 155, 31, 0) 0%, rgb(250, 155, 31) 100%);
+}
+.introduction .text-container .text {
+  margin-top: 20px;
+}
+.introduction .text-container .text h2 {
+  font-weight: 900;
+  color: white;
+  margin-top: 8px;
+  font-size: 60px;
+}
+.introduction .text-container .text span {
+  color: #ffa500;
+}
+.introduction .text-container .text .subtxt {
+  margin-bottom: 40px;
+}
+.introduction .text-container .text .subtxt p {
+  color: #dfd9ff;
+  font-weight: 500;
+  font-size: 26;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing-1 3.5s steps(45, end);
+  animation-fill-mode: both;
+}
+.introduction .text-container .text .subtxt p:nth-child(2) {
+  animation-delay: 2.3s;
+}
+@keyframes typing-1 {
+  from {
+    opacity: 1;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}
+.introduction .image-container {
+  position: relative;
+  display: inline-block;
+  background-color: #000000;
+}
+.introduction .image-container img {
+  object-fit: contain;
+  width: auto;
+  max-height: 400px;
+  display: block;
+  height: auto;
+}
+.introduction .image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 6px solid transparent; /* Adjust border thickness as needed */
+  border-radius: 10px; /* Adjust border radius as needed */
+  animation: glowing 2s infinite; /* Adjust duration and animation behavior */
+}
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 10px 0px orange; /* Initial shadow style */
+  }
+  50% {
+    box-shadow: 0 0 20px 5px orange; /* Glowing effect */
+  }
+  100% {
+    box-shadow: 0 0 10px 0px orange; /* Return to initial style */
+  }
+}
+
+.primaryBtn {
+  display: inline-block;
+  position: relative;
+  padding: 10px 60px 10px 10px;
+  border-radius: 5px;
+  background-color: #ffa500;
+  overflow: hidden;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+.primaryBtn::after {
+  overflow: hidden;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -30px;
+  height: 100%;
+  width: 80px;
+  transform: skewX(-30deg);
+  background-color: white;
+  transition: width 0.3s;
+}
+.primaryBtn::before {
+  content: "";
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 14px;
+  width: 14px;
+  background: url("../assets/arrow.svg") center no-repeat;
+  background-size: contain;
+  transition: width 0.3s;
+}
+.primaryBtn:hover {
+  z-index: 2;
+  color: #ffa500;
+}
+.primaryBtn:hover::after {
+  z-index: -1;
+  width: calc(100% + 40px);
+}
+
+.secondaryBtn {
+  position: relative;
+  display: block;
+  width: fit-content;
+  background-color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+.secondaryBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 100%;
+  background-color: #ffa500;
+  transform: skewX(20deg);
+  transition: width 0.3s;
+  z-index: -1;
+}
+.secondaryBtn:hover {
+  background-color: transparent;
+  color: white;
+}
+.secondaryBtn:hover::before {
+  width: calc(100% + 20px);
+}
+
+.overview p {
+  max-width: 1000px;
+  margin-top: 16px;
+  color: #dfd9ff;
+  font-size: 17px;
+  line-height: 30px;
+}
+.overview .subTitle {
+  color: #dfd9ff;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.overview .title {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 30px;
+}
+.overview .subtext {
+  margin-top: 16px;
+  color: #dfd9ff;
+  font-size: 17px;
+  max-width: 768px;
+  line-height: 30px;
+}
+.overview .cards-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.overview .cards .card {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.121);
+  border-radius: 60px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.689);
+  padding: 1px;
+  border-radius: 20px;
+  box-shadow: 0px 35px 120px -15px #211e35;
+}
+.overview .cards .card .content {
+  padding: 12px 5px;
+  min-height: 280px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.overview .cards .card .content img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.overview .cards .card .content h3 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.experience .subTitle {
+  color: #dfd9ff;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.experience .title {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.timeline-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.timeline-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.timeline-content h3 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+.timeline-content p {
+  color: #dfd9ff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.timeline-info {
+  margin-top: 20px;
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.TechSkills {
+  margin: 0 auto;
+  max-width: 1000px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.TechSkills .skillball {
+  width: 100px;
+  height: 100px;
+}
+
+.projects .subTitle {
+  color: #dfd9ff;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.projects .title {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 30px;
+}
+.projects .subtext {
+  margin-top: 16px;
+  color: #dfd9ff;
+  font-size: 17px;
+  max-width: 768px;
+  line-height: 30px;
+}
+.projects .projectcards {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.projects .projectcards .card {
+  background: rgba(255, 255, 255, 0.121);
+  border-radius: 60px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 16px;
+  width: 360px;
+}
+.projects .projectcards .card .cardinfo {
+  position: relative;
+  width: 100%;
+  height: 230px;
+}
+.projects .projectcards .card .cardinfo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.projects .projectcards .card .cardinfo .content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: 12px;
+}
+.projects .projectcards .card .cardinfo .content .giticon {
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 9999px;
+}
+.projects .projectcards .card .info {
+  margin-top: 20px;
+}
+.projects .projectcards .card .info h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+.projects .projectcards .card .info p {
+  margin-top: 8px;
+  color: #dfd9ff;
+  font-size: 14px;
+}
+.projects .projectcards .card .tags {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  overflow: hidden;
+}
+.contact-wrapper .input-wrapper {
+  background: rgba(255, 255, 255, 0.121);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(9.3px);
+  flex: 0 0 calc(50% - 50px);
+  padding: 28px;
+  border-radius: 16px;
+}
+.contact-wrapper .input-wrapper .subTitle {
+  color: #dfd9ff;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.contact-wrapper .input-wrapper .title {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 30px;
+}
+.contact-wrapper .input-wrapper .form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.contact-wrapper .input-wrapper .form label {
+  display: flex;
+  flex-direction: column;
+}
+.contact-wrapper .input-wrapper .form label span {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.contact-wrapper .input-wrapper .form input,
+.contact-wrapper .input-wrapper .form textarea {
+  background: white;
+  border: 1px solid transparent;
+  padding: 16px 24px;
+  color: rgb(0, 0, 0);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: ease-in-out 0.3s;
+}
+.contact-wrapper .input-wrapper .form input ::placeholder,
+.contact-wrapper .input-wrapper .form textarea ::placeholder {
+  color: #dfd9ff;
+  transition: ease-in-out 0.3s;
+}
+.contact-wrapper .input-wrapper .form input:focus,
+.contact-wrapper .input-wrapper .form textarea:focus {
+  border: 1px solid rgb(0, 0, 0);
+}
+.contact-wrapper .input-wrapper .form input:focus::placeholder,
+.contact-wrapper .input-wrapper .form textarea:focus::placeholder {
+  color: black;
+}
+.contact-wrapper .input-wrapper .form .SubmitBtn {
+  position: relative;
+  display: block;
+  width: fit-content;
+  background-color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+.contact-wrapper .input-wrapper .form .SubmitBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 100%;
+  background-color: #ffa500;
+  transform: skewX(20deg);
+  transition: width 0.3s;
+  z-index: -1;
+}
+.contact-wrapper .input-wrapper .form .SubmitBtn:hover {
+  background-color: transparent;
+  color: white;
+}
+.contact-wrapper .input-wrapper .form .SubmitBtn:hover::before {
+  width: calc(100% + 20px);
+}
+.contact-wrapper .Globe-container {
+  flex: 0 0 calc(50% - 50px);
+}
+
+.mobilemenu {
+  color: #fa9c1d;
+  background-color: #000022;
+  width: 100vw;
+  position: absolute;
+  top: 73px;
+  right: 0;
+  height: 0; /* Initial height set to 0 */
+  overflow: hidden; /* Hide content that overflows the container */
+  transition: height 0.3s ease; /* Animation transition */
+}
+.mobilemenu ul {
+  padding-top: 1rem;
+}
+.mobilemenu ul li {
+  width: 100%;
+  padding-left: 1rem;
+  color: #fbf5f3;
+  font-size: 18px;
+  display: block;
+  position: relative;
+}
+.mobilemenu.shown {
+  height: 100vh; /* Change the height to 100vh when the 'shown' class is applied */
+}
+
+@media screen and (max-width: 800px) {
+  .deskNav {
+    padding: 20px 20px;
+  }
+  .deskNav .navlist {
+    display: none;
+  }
+  .introduction {
+    align-content: flex-end;
+    justify-content: flex-start;
+  }
+  .introduction .text-container .text h2 {
+    font-size: 45px;
+  }
+  .overview .cards-container {
+    justify-content: center;
+  }
+  .overview .cards-container .cards {
+    width: 100%;
+  }
+  .overview .cards-container .cards .card {
+    width: 100%;
+  }
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    overflow: hidden;
+  }
+  .contact-wrapper .Globe-container {
+    min-height: 350px;
+  }
+  .contact-wrapper .Globe-container div {
+    min-height: 350px;
+  }
+  .contact-wrapper .Globe-container div div {
+    min-height: 350px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
