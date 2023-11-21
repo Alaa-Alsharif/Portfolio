@@ -48,8 +48,16 @@ const About = () => {
       </motion.p>
 
       <div className="cards-container">
-        {services.map((service, index) => (
+        {/* {services.map((service, index) => (
           <ServiceCard key={services.title} index={index} {...service} />
+        ))} */}
+
+        {services.map((service, index) => (
+          <ServiceCard
+            key={`${service.title}-${index}`}
+            index={index}
+            {...service}
+          />
         ))}
       </div>
     </div>
