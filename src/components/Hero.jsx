@@ -21,13 +21,7 @@ const Hero = () => {
             <p>and Web Applications</p>
           </div>
 
-          <a
-            href="..\src\components\Alaa-Alsharif.pdf"
-            download
-            className="primaryBtn"
-          >
-            Resume
-          </a>
+      
         </div>
       </div>
 
